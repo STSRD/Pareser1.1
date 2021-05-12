@@ -10,22 +10,21 @@ namespace Practice
         public string Name;
         public string Rarity;
         public bool Mythical;
-        public List<Characteristic> Characteristic;
+        public List<BuildingDescription> BuildingDescription;
 
         public Building(object Image,
         string Name,
         string Rarity,
         bool Mythical,
-        List<Characteristic> Characteristic
+        List<BuildingDescription> BuildingDescription
             ) {
             this.Image = Image;
             this.Name = Name;
             this.Rarity = Rarity;
             this.Mythical = Mythical;
 
-            this.Characteristic = Characteristic;
+            this.BuildingDescription = BuildingDescription;
         }
 
     }
 }
-
