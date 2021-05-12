@@ -1,26 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Практика
+namespace Practice
 {
-    struct Races
+    struct Race
     {
-        public string name;
-        public List<Building> buildings;
+        public string Name;
+        public List<Building> Buildings;
 
-        public Races(string name, List<Building> buildings) {
-            this.name = name;
-            this.buildings = buildings;
+        public Race(string name, List<Building> buildings) {
+            this.Name = name;
+            this.Buildings = buildings;
         }
 
-        public void viv() {
-            Console.WriteLine(name);
-            foreach (var item in buildings)
-            {
-                item.viv();
-                Console.WriteLine();
-            }
-        }
     }
 }
