@@ -16,8 +16,8 @@ namespace Practice
         public int AttackSpeed;
         public float AttackCooldown;
         public float RecruitTime;
-        public Enum TypeAttack;
-        public Enum Missile;
+        public AttackType TypeAttack;
+        public ShellType Missile;
         public int Income;
         public int GoldCooldown;
         public string Bonus;
@@ -33,8 +33,8 @@ namespace Practice
         int AttackSpeed,
         int AttackCooldown,
         float RecruitTime,
-        Enum TypeAttack,
-        Enum Missile,
+        AttackType TypeAttack,
+        ShellType Missile,
         int Income,
         int GoldCooldown,
         string Bonus,
@@ -59,4 +59,5 @@ namespace Practice
         }
     }
 }
+
 
