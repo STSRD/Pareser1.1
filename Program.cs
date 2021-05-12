@@ -8,6 +8,7 @@ namespace Practice
         {
 
             Parser.ParseBuildings(@"C:\Users\User\Desktop\Kart_ras2.csv");
+            Parser.ParseUnits(@"C:\Users\User\Desktop\Kart_ras2.csv");
         }
     }
 }
