@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Практика
+namespace Practice
 {
     struct Damage
     {
@@ -20,11 +20,6 @@ namespace Практика
             this.Min = int.Parse(a[0]);
             this.Max = int.Parse(a[1]);
 
-        }
-
-        public void viv()
-        {
-            Console.WriteLine(Min + "-" + Max);
         }
     }
 }
