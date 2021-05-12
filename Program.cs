@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 
-namespace Практика
+namespace Practice
 {
     class Program
     {
         static void Main(string[] args)
         {
 
-            Parser.ParserBuildings(@"C:\Users\User\Desktop\Kart_ras2.csv");
+            Parser.ParseBuildings(@"C:\Users\User\Desktop\Kart_ras2.csv");
         }
     }
 }
