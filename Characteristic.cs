@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Практика
+namespace Practice
 {
     struct Characteristic
     {
@@ -56,26 +56,6 @@ namespace Практика
             this.GoldIncomeReloading = GoldIncomeReloading;
             this.Bonus = Bonus;
             this.TimeBuild = TimeBuild;
-        }
-
-        public void viv()
-        {
-            Console.WriteLine(Tipe);
-            Console.WriteLine(Cost);
-            Console.WriteLine(DestrIncome);
-            Console.WriteLine(Heals);
-            Console.WriteLine(RangeAttack);
-            DamageSolders.viv();
-            DamageBuilding.viv();
-            Console.WriteLine(ReloadingAttack);
-            Console.WriteLine(TimeTraining);
-            Console.WriteLine(TipeAttack);
-            Console.WriteLine(Missile);
-            Console.WriteLine(GoldIncome);
-            Console.WriteLine(GoldIncomeReloading);
-            Console.WriteLine(Bonus);
-            Console.WriteLine(TimeBuild);
-
         }
     }
 }
