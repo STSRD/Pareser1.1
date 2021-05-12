@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Google.GData.Client;
@@ -56,7 +57,7 @@ namespace Practice
             }
         }
 
-        static public Race ParseBuildings(string link) {
+        static public List<Building> ParseBuildings(string link) {
             //Чтение данных
             List<string[]> date = new List<string[]>();
             using (TextFieldParser tfp = new TextFieldParser(link)) {
@@ -113,10 +114,72 @@ namespace Practice
                 }
             }
 
-            //запись рассы
-            Race newRace = new Race(date[0][1], buildings);
+            return buildings;
+        }
 
-            return newRace;
+        static public List<Unit> ParseUnits(string link)
+        {
+            //Чтение данных
+            List<string[]> date = new List<string[]>();
+            using (TextFieldParser tfp = new TextFieldParser(link))
+            {
+                tfp.TextFieldType = FieldType.Delimited;
+                tfp.SetDelimiters(",");
+
+                while (!tfp.EndOfData)
+                {
+                    string[] units = tfp.ReadFields();
+                    date.Add(units);
+                }
+            }
+
+            //Подсчет существ
+            int numberOfUnits = 0;
+            for (int i = 1; i < date[26].Length; i++)
+            {
+                if (date[26][i] != "" && date[26][i] != null) {
+                    numberOfUnits++;                
+                }
+            }
+
+            //Запись списка существ рассы
+            List<Unit> Units = new List<Unit>();
+
+            for (int i = 0; i < numberOfUnits; i++)
+            {
+                //запись характеристик существа
+                List<UnitDescription> unitDescriptions = new List<UnitDescription>();
+                int position;
+
+                for (int j = 0; j < 13; j++)
+                {
+                    position = 41 + i * 14 + j;
+
+                    UnitDescription unitDescription = new UnitDescription();
+                    unitDescription.Health = int.Parse(date[32][position]);
+                    unitDescription.UnitDamage = new Damage(date[33][position]);
+                    unitDescription.BuildingDamage = new Damage(date[34][position]);
+                    unitDescription.Skill = date[35][position];
+                    unitDescriptions.Add(unitDescription);
+                }
+
+                //Запись информации о существе
+                position = 41 + i * 14;
+                Unit newUnit = new Unit();
+
+                newUnit.Name = date[26][position];
+                newUnit.AttackRange = int.Parse(date[27][position]);
+                newUnit.MovementSpeed = float.Parse(date[28][position]);
+                newUnit.AttackSpeed = int.Parse(date[29][position]);
+                newUnit.AttackCooldown = float.Parse(date[30][position]);
+                newUnit.TypeAttack = ConvertStringToAttackType(date[31][position]);
+                newUnit.UnitDescriptions = unitDescriptions;
+
+                Units.Add(newUnit);
+
+            }
+
+            return Units;
         }
     }
 }
