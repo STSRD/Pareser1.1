@@ -16,9 +16,9 @@ namespace Practice
         }
         public Damage(string damage)
         {
-            string[] a = damage.Split('-');
-            this.Min = int.Parse(a[0]);
-            this.Max = int.Parse(a[1]);
+            string[] maxMinDamage = damage.Split('-');
+            this.Min = int.Parse(maxMinDamage[0]);
+            this.Max = int.Parse(maxMinDamage[1]);
 
         }
     }
