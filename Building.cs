@@ -1,44 +1,31 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Практика
+namespace Practice
 {
     struct Building
     {
         public object Image;
         public string Name;
-        //public int Lvl_to_build;
         public string Rarity;
         public bool Mythical;
-        //public int Lvl;
-        public List<Characteristic> сharacteristic;
+        public List<Characteristic> Characteristic;
 
         public Building(object Image,
         string Name,
         string Rarity,
         bool Mythical,
-        //int Lvl,
-        List<Characteristic> сharacteristic
+        List<Characteristic> Characteristic
             ) {
             this.Image = Image;
             this.Name = Name;
             this.Rarity = Rarity;
             this.Mythical = Mythical;
-            //this.Lvl = Lvl;
-            this.сharacteristic = сharacteristic;
+
+            this.Characteristic = Characteristic;
         }
 
-        public void viv()
-        {
-            Console.WriteLine("image");
-            Console.WriteLine(Name);
-            Console.WriteLine(Rarity);
-            Console.WriteLine(Mythical);
-            foreach (var item in сharacteristic)
-            {
-                item.viv();
-            }
-        }
     }
 }
+
