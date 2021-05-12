@@ -6,25 +6,25 @@ namespace Практика
 {
     struct Damage
     {
-        public int min;
-        public int max;
+        public int Min;
+        public int Max;
 
         public Damage(int min, int max) {
-            this.min = min;
-            this.max = max;
+            this.Min = min;
+            this.Max = max;
 
         }
         public Damage(string damage)
         {
             string[] a = damage.Split('-');
-            this.min = int.Parse(a[0]);
-            this.max = int.Parse(a[1]);
+            this.Min = int.Parse(a[0]);
+            this.Max = int.Parse(a[1]);
 
         }
 
         public void viv()
         {
-            Console.WriteLine(min + "-" + max);
+            Console.WriteLine(Min + "-" + Max);
         }
     }
 }
